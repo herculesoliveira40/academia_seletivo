@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('cpf');
             $table->string('observation');
             $table->timestamps();
-            
+
             $table->integer('profile');
             $table->foreignId('category_id')->references('id')->on('categorys');
         });
