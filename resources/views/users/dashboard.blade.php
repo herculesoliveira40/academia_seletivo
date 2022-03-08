@@ -27,11 +27,12 @@
                     <td>{{ $user->profile == 0 ? "Administrador" : "Visualizador"}}</td>
                     <td>
                         <a href="/users/edit/{{ $user->id }}" class="btn btn-warning edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> 
+                    </td>  
+
+                    <td> 
                         <form action="/users/{{ $user->id }}" method="POST">
                             @csrf
-                            @method('DELETE')
-                    </td>     
-                    <td>     
+                            @method('DELETE')    
                             <button type="submit" class="btn btn-danger delete-btn" ><i class="bi bi-trash3-fill"></i> </button>
                         </form>
                     </td>
