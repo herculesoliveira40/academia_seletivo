@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ClientController;
 
 
 Route::get('/', function () {
     return view('home');
 });
-
-
 
         // Rotas Usuarios
 Route::get('/users/create', [UserController::class, 'create'])->middleware('auth');
@@ -30,6 +30,16 @@ Route::get('/users/dashboard', [UserController::class, 'dashboard'])->middleware
 Route::get('/users/edit/{id}', [UserController::class, 'edit'])->middleware('auth');
 Route::put('/users/update/{id}', [UserController::class, 'update'])->middleware('auth');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->middleware('auth');
+
+
+        // Rotas Categorias
+Route::get('/categories/create', [CategoryController::class, 'create'])->middleware('auth');
+Route::post('/categories', [CategoryController::class, 'store']);
+Route::get('/categories/dashboard', [CategoryController::class, 'dashboard'])->middleware('auth');
+
+Route::get('/categories/edit/{id}', [CategoryController::class, 'edit'])->middleware('auth');
+Route::put('/categories/update/{id}', [CategoryController::class, 'update'])->middleware('auth');
+Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->middleware('auth');
 
 
 

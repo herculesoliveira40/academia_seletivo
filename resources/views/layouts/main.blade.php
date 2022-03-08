@@ -43,7 +43,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Cliente</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Categoria</a></li>
+              <li><a class="dropdown-item" href="/categories/create">Categoria</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/users/create">Usuario</a></li>
             </ul>
@@ -59,9 +59,9 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Cliente</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Categoria</a></li>
+              <li><a class="dropdown-item" href="/categories/dashboard">Categoria</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Usuario</a></li>
+              <li><a class="dropdown-item" href="/users/dashboard">Usuario</a></li>
             </ul>
           </li>
         @endauth 
