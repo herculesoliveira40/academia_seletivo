@@ -21,8 +21,8 @@
             @foreach($clients as $client)
                 <tr>
                     <td scropt="row">{{ $client->id }}</td>
-                    <td>{{ $client->name }}</td>
-                    <td>{{ $client->category_id }}</td>
+                    <td>{{ $client->name_client }}</td>
+                    <td>{{ $client->name_category }}</td>
 
                     <td>
                         <a href="/clients/edit/{{ $client->id }}" class="btn btn-warning edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> 

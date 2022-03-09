@@ -16,8 +16,8 @@
     @csrf               {{--DIRETIVA SALVAR DADOS NO BANCO--}}
     @method('PUT')
     <div class="form-group">
-      <label for="name">Nome Usuario:</label>
-      <input type="text" class="form-control" id="title" name="name" value="{{ $category->name }}">
+      <label for="name_category">Nome Categoria:</label>
+      <input type="text" class="form-control" id="name_category" name="name_category" value="{{ $category->name_category }}">
     </div>
     
     <input type="submit" class="btn btn-success" value="Editar Usuario">

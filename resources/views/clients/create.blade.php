@@ -15,8 +15,8 @@
     @csrf               {{--DIRETIVA SALVAR DADOS NO BANCO--}}
 
     <div class="form-group">
-      <label for="name">Nome Cliente:</label>
-      <input type="text" class="form-control" id="title" name="name" placeholder="Nome do Cliente" required>
+      <label for="name_client">Nome Cliente:</label>
+      <input type="text" class="form-control" id="name_client" name="name_client" placeholder="Nome do Cliente" required>
     </div>
     <div class="form-group">
       <label for="phone">Telefone Cliente:</label>
@@ -41,7 +41,7 @@
       <label for="categoria_id" class="form-label"> Categoria do Cliente: </label>
       <select  name="category_id" id="category_id"  class="form-control">  
           @foreach ($categories as $category)
-          <option value="{{$category->id}}">{{$category->name}}</option>
+          <option value="{{$category->id}}">{{$category->name_category}}</option>
           @endforeach
       </select>  
     </div>

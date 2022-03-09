@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name_client');
             $table->string('phone');
             $table->string('cpf');
             $table->string('observation');
@@ -23,6 +23,8 @@ return new class extends Migration
 
             $table->integer('profile');
             $table->foreignId('category_id')->references('id')->on('categories');
+            $table->foreignId('user_creator_id')->references('id')->on('users');
+            
         });
     }
 

@@ -16,8 +16,8 @@
     @csrf               {{--DIRETIVA SALVAR DADOS NO BANCO--}}
     @method('PUT')
     <div class="form-group">
-      <label for="name">Nome Usuario:</label>
-      <input type="text" class="form-control" id="title" name="name" value="{{ $client->name }}">
+      <label for="name_client">Nome Cliente:</label>
+      <input type="text" class="form-control" id="name_client" name="name_client" value="{{ $client->name_client }}">
     </div>
     <div class="form-group">
       <label for="phone">Telefone Cliente:</label>
@@ -42,7 +42,7 @@
       <label for="categoria_id" class="form-label"> Categoria do Cliente: </label>
       <select  name="category_id" id="category_id"  class="form-control">  
           @foreach ($categories as $category)
-          <option value="{{$category->id}}" {{ $category->category_id == ($loop->index +1) ? "selected='selected'" : ""}}>{{$category->name}}</option>
+          <option value="{{$category->id}}" {{ $client->category_id == ($loop->index +1) ? "selected='selected'" : ""}}>{{$category->name_category}}</option>
           @endforeach
       </select>  
     </div>

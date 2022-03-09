@@ -15,8 +15,8 @@
     @csrf               {{--DIRETIVA SALVAR DADOS NO BANCO--}}
 
     <div class="form-group">
-      <label for="name">Nome Categoria:</label>
-      <input type="text" class="form-control" id="title" name="name" placeholder="Nome da Categoria" required>
+      <label for="name_category">Nome Categoria:</label>
+      <input type="text" class="form-control" id="name_category" name="name_category" placeholder="Nome da Categoria" required>
     </div>
     
     <input type="submit" class="btn btn-success" value="Cadastrar Categoria">

@@ -20,7 +20,7 @@
             @foreach($categories as $category)
                 <tr>
                     <td scropt="row">{{ $category->id }}</td>
-                    <td>{{ $category->name }}</td>
+                    <td>{{ $category->name_category }}</td>
 
                     <td>
                         <a href="/categories/edit/{{ $category->id }}" class="btn btn-warning edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> 

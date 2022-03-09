@@ -147,6 +147,10 @@
         </div>
     </div>
 </main>
+<footer class="text-center bg-secondary text-light">
+    <p> </p>
+        <p>  2022 <a href="https://github.com/herculesoliveira40" target="_blank"> Shelby  &copy;</a> </strong> </p>
+</footer>
 </body>
 
 </html>
