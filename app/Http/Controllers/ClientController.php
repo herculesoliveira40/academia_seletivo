@@ -37,7 +37,7 @@ class ClientController extends Controller
     }
 
     public function dashboard() {
-        $categories = Category::all();
+        
         $clients = DB::table('clients')
 
         ->orderByRaw('id ASC')   
@@ -46,7 +46,21 @@ class ClientController extends Controller
         'categories.name_category')
         ->get();
        // dd($clients);
-    return View('clients.dashboard', ['clients' => $clients], compact('categories')); 
+
+       $results = DB::select(DB::raw("select count(clients.category_id) as quanty_category, 
+        clients.category_id, categories.name_category 
+            FROM categories 
+                LEFT JOIN clients ON clients.category_id = categories.id GROUP BY categories.id "));
+
+        $data= "";
+
+        foreach($results as $val) {
+            $data.= "['".$val->name_category."',  ".$val->quanty_category."],";
+        }           
+       // dd($results);
+        $charData = $data;
+
+    return View('clients.dashboard', ['clients' => $clients], compact('charData')); 
     }
 
     public function show($id) {
@@ -80,21 +94,6 @@ class ClientController extends Controller
     return redirect('/clients/dashboard')->with('mensagem', 'Cliente deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 
-    public function pieChart() {
-
-        $results = DB::select(DB::raw("select count(clients.category_id) as quanty_category, 
-        clients.category_id, categories.name_category 
-            FROM categories 
-                LEFT JOIN clients ON clients.category_id = categories.id GROUP BY categories.id "));
-
-        $data= "";
-        foreach($results as $val) {
-            $data.= "['".$val->name_category."',  ".$val->quanty_category."],";
-        }           
-       // dd($results);
-        $charData = $data;
-    return View('clients.pie', compact('charData'));
-    }
 }
 
 

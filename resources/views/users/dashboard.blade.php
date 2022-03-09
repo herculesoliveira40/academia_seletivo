@@ -5,7 +5,7 @@
 @section('content')
 <div class="row">
 <div class="col-xs-6 col-sm-8 col-lg-10"> 
-<a href="/users/create" class="btn btn-success"><i class="bi bi-plus-square-dotted"></i> Criar Usuario</a>
+{{-- <a href="/users/create" class="btn btn-success"><i class="bi bi-plus-square-dotted"></i> Cadastrar Usuario</a> --}}
 
     <table class="table">
         <thead>
