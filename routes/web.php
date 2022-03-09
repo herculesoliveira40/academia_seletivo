@@ -21,6 +21,12 @@ use App\Http\Controllers\ClientController;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/home', function () {
+    return view('home');
+});
+Route::get('/localization', function () {
+    return view('localization');
+});
 
         // Rotas Usuarios
 Route::get('/users/create', [UserController::class, 'create'])->middleware('auth');

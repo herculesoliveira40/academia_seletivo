@@ -24,7 +24,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="/home">
-        <img src="/img/logo_fitness_pngwing.png" alt="" width="30" height="24">
+        <img src="/img/logo_fitness_pngwing.png" alt="" width="60" height="48">
       </a>  
       <a class="navbar-brand" href="/home">FH</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,11 +32,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @guest
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre</a>
+            <a class="nav-link" href="/localization">Lozalização</a>
           </li>
-        
-          @auth  
+        @endguest 
+
+        @auth  
           @if (Auth::user()->profile == 0)     {{-- Mostrar Cadastrar se Profile = adminstrador --}}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +52,7 @@
               <li><a class="dropdown-item" href="/users/create">Usuario</a></li>
             </ul>
           </li>
-        @endif
+          @endif
         @endauth
 
 
