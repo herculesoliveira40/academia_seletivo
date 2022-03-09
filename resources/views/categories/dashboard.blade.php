@@ -6,6 +6,7 @@
 <div class="row">
 <div class="col-xs-6 col-sm-8 col-lg-10"> 
 {{-- <a href="/categories/create" class="btn btn-success"><i class="bi bi-plus-square-dotted"></i> Cadastrar Categoria</a> --}}
+
     <table class="table">
         <thead>
             <tr>
