@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('tel');
+            $table->string('phone');
             $table->string('cpf');
             $table->string('observation');
             $table->timestamps();
 
             $table->integer('profile');
-            $table->foreignId('category_id')->references('id')->on('categorys');
+            $table->foreignId('category_id')->references('id')->on('categories');
         });
     }
 

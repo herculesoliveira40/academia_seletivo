@@ -42,6 +42,18 @@ Route::put('/categories/update/{id}', [CategoryController::class, 'update'])->mi
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->middleware('auth');
 
 
+        // Rotas Clients
+Route::get('/clients/create', [ClientController::class, 'create'])->middleware('auth');
+Route::post('/clients', [ClientController::class, 'store']);
+
+Route::get('/clients/dashboard', [ClientController::class, 'dashboard'])->middleware('auth');
+
+Route::get('/clients/{id}', [ClientController::class, 'show'])->middleware('auth');
+Route::get('/clients/edit/{id}', [ClientController::class, 'edit'])->middleware('auth');
+Route::put('/clients/update/{id}', [ClientController::class, 'update'])->middleware('auth');
+Route::delete('/clients/{id}', [ClientController::class, 'destroy'])->middleware('auth');
+
+
 
 
 

@@ -41,7 +41,7 @@
               Cadastrar
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Cliente</a></li>
+              <li><a class="dropdown-item" href="/clients/create">Cliente</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/categories/create">Categoria</a></li>
               <li><hr class="dropdown-divider"></li>
@@ -57,7 +57,7 @@
               Relatorio
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Cliente</a></li>
+            <li><a class="dropdown-item" href="/clients/dashboard">Cliente</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/categories/dashboard">Categoria</a></li>
               <li><hr class="dropdown-divider"></li>
