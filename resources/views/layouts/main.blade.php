@@ -11,12 +11,12 @@
                        <!-- CSS e JS Interno -->
     <link rel="stylesheet" href="/css/bootstrap.min.css"> 
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-                    <!-- Boostrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-                    <!-- Icones Bootstrap -->
+                    
+                    <!-- Icones Bootstrap CDN-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-                    <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+                    <!-- Jquery Interno, Mask CDN -->
+    <script src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 </head>
 

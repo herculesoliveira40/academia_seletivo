@@ -20,18 +20,18 @@
     </div>
     <div class="form-group">
       <label for="phone">Telefone Cliente:</label>
-      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefone" required>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefone" onkeypress="$(this).mask('(00) 00000-0000')" required>
     </div>
     <div class="form-group">
       <label for="cpf">CPF Cliente:</label>
-      <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required>
+      <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" onkeypress="$(this).mask('000.000.000-00')" required>
     </div>
     <div class="form-group">
       <label for="observation">Descrição:</label>
       <textarea name="observation" id="observation" class="form-control" placeholder="Observação Cliente"></textarea>
     </div>
     <div class="form-group">
-      <label for="profile">Disponivel?</label>
+      <label for="profile">Perfil:</label>
       <select name="profile" id="profile" class="form-control">
         <option value="0">Operador</option>
         <option value="1">Inativo</option>

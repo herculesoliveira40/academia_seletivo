@@ -21,18 +21,18 @@
     </div>
     <div class="form-group">
       <label for="phone">Telefone Cliente:</label>
-      <input type="tel" class="form-control" id="phone" name="phone" value="{{ $client->phone }}">
+      <input type="tel" class="form-control" id="phone" name="phone" value="{{ $client->phone }}" onkeypress="$(this).mask('(00) 00000-0000')">
     </div>
     <div class="form-group">
       <label for="cpf">CPF Cliente:</label>
-      <input type="text" class="form-control" id="cpf" name="cpf" value="{{ $client->cpf }}">
+      <input type="text" class="form-control" id="cpf" name="cpf" value="{{ $client->cpf }}" onkeypress="$(this).mask('000.000.000-00')">
     </div>
     <div class="form-group">
       <label for="observation">Descrição:</label>
       <textarea name="observation" id="observation" class="form-control" placeholder="Observação Cliente"> {{ $client->observation }} </textarea>
     </div>
     <div class="form-group">
-      <label for="profile">Disponivel?</label>
+      <label for="profile">Perfi:?</label>
       <select name="profile" id="profile" class="form-control">
         <option value="0">Operador</option>
         <option value="1" {{ $client->profile == 1 ? "selected='selected'" : ""}}>Inativo</option>
