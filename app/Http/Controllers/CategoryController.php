@@ -48,8 +48,8 @@ class CategoryController extends Controller
     }
 
 
-    public function destroy($id) {
-
+    public function destroy(Request $request, $id) {
+        $id = $request['index_id'];
         Category::findOrFail($id)->delete();
 
     return redirect('/categories/dashboard')->with('mensagem', 'Categoria deletada com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm

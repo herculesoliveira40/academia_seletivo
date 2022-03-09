@@ -53,8 +53,8 @@ class UserController extends Controller
     }
 
 
-    public function destroy($id) {
-
+    public function destroy(Request $request, $id) {
+        $id = $request['index_id'];
         User::findOrFail($id)->delete();
 
     return redirect('/users/dashboard')->with('mensagem', 'Usuario deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm

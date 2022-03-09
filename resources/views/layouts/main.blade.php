@@ -54,8 +54,6 @@
           </li>
           @endif
         
-
-
          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,7 +81,7 @@
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Escalha a opção desejada: </h5>
+                          <h5 class="modal-title" id="exampleModalLabel"> Escolha a opção desejada: </h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -137,24 +135,27 @@
     </div>
   </nav>
 
-<main>
-    <div class="container-fluid">
-        <div class="row">
-            @if(session('mensagem'))
-                <p class="alert alert-success">{{ session('mensagem') }}</p>
-            
-            @elseif(session('alerta'))
-                <p class="alert alert-danger">{{ session('alerta') }}</p>   
-            @endif
-            
-            @yield('content')
-        </div>
-    </div>
-</main>
-<footer class="text-center bg-secondary text-light">
-    <p> </p>
-        <p>  2022 <a href="https://github.com/herculesoliveira40" target="_blank"> Shelby  &copy;</a> </strong> </p>
-</footer>
-</body>
+  <main>
+      <div class="container-fluid">
+          <div class="row">
+              @if(session('mensagem'))
+                  <p class="alert alert-success">{{ session('mensagem') }}</p>
+              
+              @elseif(session('alerta'))
+                  <p class="alert alert-danger">{{ session('alerta') }}</p>   
+              @endif
+              
+              @yield('content')
+          </div>
+      </div>
+  </main>
 
+ 
+
+  <footer class="text-center bg-secondary text-light">
+      <p> </p>
+          <p>  2022 <a href="https://github.com/herculesoliveira40" target="_blank"> Shelby  &copy;</a> </strong> </p>
+  </footer>
+</body>
+<script type="text/javascript" src="/js/script_modal.js"></script>
 </html>

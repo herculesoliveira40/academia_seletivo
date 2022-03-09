@@ -87,10 +87,10 @@ class ClientController extends Controller
     }
 
 
-    public function destroy($id) {
-
+    public function destroy(Request $request, $id) {
+        $id = $request['index_id'];
         Client::findOrFail($id)->delete();
-
+       
     return redirect('/clients/dashboard')->with('mensagem', 'Cliente deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 
