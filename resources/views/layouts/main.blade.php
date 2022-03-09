@@ -35,7 +35,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Sobre</a>
           </li>
-        @auth   
+        
+          @auth  
+          @if (Auth::user()->profile == 0)     {{-- Mostrar Cadastrar se Profile = adminstrador --}}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Cadastrar
@@ -48,10 +50,11 @@
               <li><a class="dropdown-item" href="/users/create">Usuario</a></li>
             </ul>
           </li>
-        @endauth  
+        @endif
+        @endauth
 
 
-        @auth 
+         
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Relatorio
@@ -64,9 +67,8 @@
               <li><a class="dropdown-item" href="/users/dashboard">Usuario</a></li>
             </ul>
           </li>
-        @endauth 
-        
-        
+         
+               
         @auth
           <li class="nav-item">
                   <!-- Button trigger modal -->
