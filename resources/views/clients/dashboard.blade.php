@@ -1,11 +1,43 @@
 @extends('layouts.main')
 
-@section('title', 'Relatorio Categoria Painel')
+@section('title', 'Relatorio Clientes Painel')
 
 @section('content')
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Categoria Nome', 'Quantidade Clientes Categoria'],
+          <?= $charData; ?>
+        ]);
+
+      var options = {
+        title: 'Quantidade Clientes Categoria:',
+        legend: 'true',
+        pieSliceText: 'value',    
+        is3D: false,
+        pieStartAngle: 100,
+      };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
+                    {{-- FIM pieChat--}}
+
+
 <div class="row">
 <div class="col-xs-6 col-sm-8 col-lg-10"> 
-<a href="/clients/create" class="btn btn-success"><i class="bi bi-plus-square-dotted"></i> Criar Categoria</a>
+<a href="/clients/create" class="btn btn-success"><i class="bi bi-plus-square-dotted"></i> Cadastrar Cliente</a>
 
     <table class="table">
         <thead>
