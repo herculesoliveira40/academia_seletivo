@@ -45,6 +45,8 @@ class UserController extends Controller
     public function update(Request $request) {
 
         $data = $request->all(); 
+        
+        $data['password'] = Hash::make($request->password);
 
         User::findOrFail($request->id)->update($data);
     return redirect('/users/dashboard')->with('mensagem', 'Usuario editado com Sucesso!', ['data' => $data]);
