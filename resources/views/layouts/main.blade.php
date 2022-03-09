@@ -53,7 +53,7 @@
             </ul>
           </li>
           @endif
-        @endauth
+        
 
 
          
@@ -69,7 +69,7 @@
               <li><a class="dropdown-item" href="/users/dashboard">Usuario</a></li>
             </ul>
           </li>
-         
+        @endauth 
                
         @auth
           <li class="nav-item">
