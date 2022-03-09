@@ -47,6 +47,7 @@ Route::get('/clients/create', [ClientController::class, 'create'])->middleware('
 Route::post('/clients', [ClientController::class, 'store']);
 
 Route::get('/clients/dashboard', [ClientController::class, 'dashboard'])->middleware('auth');
+Route::get('/clients/pie', [ClientController::class, 'pieChart'])->middleware('auth');
 
 Route::get('/clients/{id}', [ClientController::class, 'show'])->middleware('auth');
 Route::get('/clients/edit/{id}', [ClientController::class, 'edit'])->middleware('auth');

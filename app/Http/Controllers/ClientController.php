@@ -79,4 +79,22 @@ class ClientController extends Controller
 
     return redirect('/clients/dashboard')->with('mensagem', 'Cliente deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
+
+    public function pieChart() {
+
+        $results = DB::select(DB::raw("select count(clients.category_id) as quanty_category, 
+        clients.category_id, categories.name_category 
+            FROM categories 
+                LEFT JOIN clients ON clients.category_id = categories.id GROUP BY categories.id "));
+
+        $data= "";
+        foreach($results as $val) {
+            $data.= "['".$val->name_category."',  ".$val->quanty_category."],";
+        }           
+       // dd($results);
+        $charData = $data;
+    return View('clients.pie', compact('charData'));
+    }
 }
+
+
