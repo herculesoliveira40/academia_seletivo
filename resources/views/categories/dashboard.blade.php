@@ -23,7 +23,9 @@
                     <td>{{ $category->name_category }}</td>
 
                     <td>
-                        <a href="/categories/edit/{{ $category->id }}" class="btn btn-warning edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> 
+                        <a href="/categories/edit/{{ $category->id }}" class="btn btn-warning edit-btn">
+                            <i class="bi bi-wrench-adjustable"></i> Editar
+                        </a> 
                         
                         <!-- Button trigger modal -->
                         <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $category->id }}">

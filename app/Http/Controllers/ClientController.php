@@ -12,10 +12,12 @@ use App\Models\User;
 class ClientController extends Controller
 {
     public function create() {
+
         $categories = Category::all();
      
     return View('clients.create', compact('categories'));
     }
+
 
     public function store(Request $request) {
         
@@ -36,32 +38,50 @@ class ClientController extends Controller
     return redirect('/clients/dashboard')->with('mensagem', 'Cliente Cadastrado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 
+
     public function dashboard() {
+                    // Serch
+        $search = request('search');
+
+        if($search) 
+        {
+
+            $clients = Client::where([
+                ['name_client', 'like', '%'.$search.'%']
+            ])->get();
+
+        } 
+        else 
+        {
+             // Clients All
+            $clients = DB::table('clients')
+            ->orderByRaw('id ASC')   
+            ->join('categories', 'clients.category_id', '=', 'categories.id')
+            ->select('clients.id', 'clients.category_id', 'clients.name_client',  
+            'categories.name_category')
+            ->get();
+            // dd($clients);
+        }
+             
         
-        $clients = DB::table('clients')
-
-        ->orderByRaw('id ASC')   
-        ->join('categories', 'clients.category_id', '=', 'categories.id')
-        ->select('clients.id', 'clients.category_id', 'clients.name_client',  
-        'categories.name_category')
-        ->get();
-       // dd($clients);
-
-       $results = DB::select(DB::raw("select count(clients.category_id) as quanty_category, 
-        clients.category_id, categories.name_category 
-            FROM categories 
-                LEFT JOIN clients ON clients.category_id = categories.id GROUP BY categories.id "));
+                    // Clients Pie Chart
+        $results = DB::select(DB::raw("select count(clients.category_id) as quanty_category, 
+            clients.category_id, categories.name_category 
+                FROM categories 
+                    LEFT JOIN clients ON clients.category_id = categories.id GROUP BY categories.id "));
 
         $data= "";
 
-        foreach($results as $val) {
-            $data.= "['".$val->name_category."',  ".$val->quanty_category."],";
+        foreach($results as $val) 
+        {
+                $data.= "['".$val->name_category."',  ".$val->quanty_category."],";
         }           
-       // dd($results);
+        // dd($results);
         $charData = $data;
 
-    return View('clients.dashboard', ['clients' => $clients], compact('charData')); 
+    return View('clients.dashboard', compact('charData'), ['clients' => $clients, 'search' => $search]); 
     }
+
 
     public function show($id) {
 
@@ -70,7 +90,9 @@ class ClientController extends Controller
     return view('clients.show', ['client' => $client]);    
     }
 
+
     public function edit($id) {
+
         $client = Client::findOrFail($id);
         $categories = Category::all();
 
@@ -88,6 +110,7 @@ class ClientController extends Controller
 
 
     public function destroy(Request $request, $id) {
+
         $id = $request['index_id'];
         Client::findOrFail($id)->delete();
        

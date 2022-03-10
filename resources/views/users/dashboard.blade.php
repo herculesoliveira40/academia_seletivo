@@ -26,12 +26,15 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->profile == 0 ? "Administrador" : "Visualizador"}}</td>
                     <td>
-                        <a href="/users/edit/{{ $user->id }}" class="btn btn-warning edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> 
-                    <!-- Button trigger modal -->
-                    <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $user->id }}">
+                        <a href="/users/edit/{{ $user->id }}" class="btn btn-warning edit-btn">
+                          <i class="bi bi-wrench-adjustable"></i> Editar
+                        </a> 
+                        
+                        <!-- Button trigger modal -->
+                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $user->id }}">
                           <i class="bi bi-trash3-fill"></i>
                         </a>
-                      <!-- Modal -->
+                        <!-- Modal -->
                       <form id="delete" action="/users/{{ $user->id }}" method="POST">
                           @csrf
                           @method('DELETE')
